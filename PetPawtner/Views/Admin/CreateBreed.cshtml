@@ -1,0 +1,18 @@
+﻿@model Breed
+<head>
+    <link href="~/css/LogIn.css" rel="stylesheet" />
+</head>
+
+<main>
+    <div class="container">
+        <h1 class="title">Lägg till raser</h1>
+        <form class="loginForm" asp-action="CreateBreed">
+            <label>Namn</label>
+            <input required asp-for="BreedName" />
+            <div class=" loginBtn">
+                <i class="fa-solid fa-paw fa-lg" style="color: #e56700"><input type="submit" value="Lägg till"></i>
+            </div>
+        </form>
+        <a class="backbtn" asp-action="DetailsBreed">Tillbaka</a>
+    </div>
+</main>

@@ -1,0 +1,20 @@
+﻿@model Breed
+<link href="~/css/LogIn.css" rel="stylesheet" />
+<main>
+    <div class="container">
+        <h1 class="title">Ändra info om ras</h1>
+
+        <form class="loginForm" asp-action="EditBreed">
+            <!--hidden innebär att den ligger i koden (i formuläret men syns inte för användaren). Detta gör vi för att id ska skickas med så att vi kan uppdatera innehållet-->
+            <input type="hidden" asp-for="Id" />
+            <label>Namn</label>
+            <input required asp-for="BreedName" />
+            <div class=" loginBtn">
+                <i class="fa-solid fa-paw fa-lg" style="color: #e56700"><input type="submit" value="Uppdatera"></i>
+            </div>
+            <div>
+             <a class="backbtn" asp-action="DetailsBreed">Tillbaka</a>
+            </div>
+        </form>
+    </div>
+</main>

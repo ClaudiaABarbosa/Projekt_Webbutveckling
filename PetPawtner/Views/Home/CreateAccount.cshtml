@@ -1,0 +1,25 @@
+﻿@model User
+
+<head>
+    <link href="~/css/LogIn.css" rel="stylesheet" />
+</head>
+<main>
+    <div class="container">
+        <h1 class="title">Skapa konto</h1>
+        <form class="loginForm" asp-action="Create">
+            <label>Förnamn</label>
+            <input required asp-for="FirstName" />
+            <label>Efternamn</label>
+            <input required asp-for="LastName" />
+            <label>E-post</label>
+            <input required asp-for="Email" />
+            <label>Skapa ett användarnamn</label>
+            <input required asp-for="Username" />
+            <label>Lösenord</label>
+            <input type="password" required asp-for="Password" />
+            <div class=" loginBtn">
+                <i class="fa-solid fa-paw fa-lg" style="color: #e56700"><input type="submit" value="Skapa konto"></i>
+            </div>
+        </form>
+    </div>
+</main>

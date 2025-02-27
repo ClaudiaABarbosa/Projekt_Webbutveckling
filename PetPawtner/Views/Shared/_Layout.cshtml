@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="sv-se">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PetPawtner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="~/css/Styles.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <div class="logo">
+                <img class="logoImg" src="/img/ppLogo.png" />
+                <h1 class="logoName">Pet<span class="logoNameBlue">Pawtner</span></h1>
+            </div>
+
+            <!-- Mobile navigation links -->
+            <div id="myLinks">
+                <a asp-action="Index" asp-controller="LogIn">Logga in</a>
+                <a asp-action="CreateAccount" asp-controller="Home">Skapa konto</a>
+                <a href="#language">Språk</a>
+            </div>
+
+            <!-- Hamburger icon -->
+            <a href="javascript:void(0);" class="icon" onclick="menuOptions()">
+                <i class="fa-solid fa-bars" style="color: #e56700"></i>
+            </a>
+            <!-- Desktop navigation links -->
+            <div class="navbarDesktop" id="myTopnav">
+                <a asp-action="Index" asp-controller="LogIn">
+                    <i class="fa-solid fa-paw fa-lg" style="color: #e56700"></i> Logga
+                    in
+                </a>
+                <a asp-action="CreateAccount" asp-controller="Home">
+                    <i class="fa-solid fa-circle-plus fa-lg"
+                       style="color: #e56700"></i>
+                    Skapa konto
+                </a>
+                <a href="#language">
+                    <i class="fa-solid fa-language fa-lg" style="color: #e56700"></i>
+                    Språk
+                </a>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Om oss</a>
+                <a href="index.html">Kontakt</a>
+                <a href="index.html">Behöver du hjälp?</a>
+            </div>
+            <div class="social-mediaContainer">
+                <div class="follow-us">
+                    <p>Följ oss på våra sociala medier!</p>
+                </div>
+                <div class="social-media">
+                    <a href="index.html" class="social-icon">
+                        <img src="~/img/Facebook.png" alt="Facebooks logo" />
+                    </a>
+                    <a href="index.html" class="social-icon">
+                        <img src="~/img/Instagram.png" alt="Instagrams logo" />
+                    </a>
+                    <a href="index.html" class="social-icon">
+                        <img src="~/img/LinkedIn.png" alt="LinkedIns logo" />
+                    </a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <a href="home.html">
+                    <img src="~/img/ppLogoMedNamn.png" alt="PetPawtners logo" />
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/Index.js"></script>
+</body>
+</html>

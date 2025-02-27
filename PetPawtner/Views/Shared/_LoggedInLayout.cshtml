@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="sv-se">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="~/css/StylesLoggedIn.css" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <div class="topnav">
+            <div class="logo">
+                <img class="logoImg" src="~/img/ppLogo.png"/>
+                <h1 class="logoName">Pet<span class="logoNameBlue">Pawtner</span></h1>
+            </div>
+            <!-- Mobile navigation links -->
+            <div id="myLinks">
+                <a asp-action="Index" asp-controller="UserPage">Hem</a>
+                <a asp-action="Index" asp-controller="Pet">Mina husdjur</a>
+                <a href="#language">Anteckningar</a>
+                <a href="LogIn.html">Boka passning</a>
+                <a href="#create">Meddelanden</a>
+                <a href="#language">Bli en Pawtner</a>
+                <a asp-action="SignOutUser" asp-controller="UserPage">Logga ut</a>
+            </div>
+
+            <!-- Hamburger icon -->
+            <a href="javascript:void(0);" class="icon" onclick="menuOptions()">
+                <i class="fa-solid fa-bars" style="color: #e56700"></i>
+            </a>
+            <!-- Desktop navigation links -->
+            <div class="navbarDesktop" id="myTopnav">
+                <a asp-action="Index" asp-controller="UserPage">
+                    <i class="fa-solid fa-house-chimney" style="color: #e56700"></i>
+                    Hem
+                </a>
+                <a asp-action="Index" asp-controller="Pet">
+                    <i class="fa-solid fa-dog" style="color: #e56700"></i> Mina
+                    husdjur
+                </a>
+                <a href="#language">
+                    <i class="fa-solid fa-book" style="color: #e56700"></i>
+                    Anteckningar
+                </a>
+                <a href="#boka">
+                    <i class="fa-solid fa-calendar-plus" style="color: #e56700"></i> Boka
+                    passning
+                </a>
+                <a href="#create">
+                    <i class="fa-solid fa-message" style="color: #e56700;"></i>
+                    Meddelanden
+                </a>
+                <a href="#language">
+                    <i class="fa-solid fa-shield-cat" style="color: #e56700"></i> Bli
+                    en Pawtner
+                </a>
+                <a asp-action="SignOutUser" asp-controller="UserPage">
+                    Logga ut <i class="fa-solid fa-right-from-bracket" style="color: #e56700;"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="index.html">Om oss</a>
+                <a href="index.html">Kontakt</a>
+                <a href="index.html">Behöver du hjälp?</a>
+            </div>
+            <div class="social-mediaContainer">
+                <div class="follow-us">
+                    <p>Följ oss på våra sociala medier!</p>
+                </div>
+                <div class="social-media">
+                    <a href="index.html" class="social-icon">
+                        <img src="~/img/Facebook.png" alt="Facebooks logo" />
+                    </a>
+                    <a href="index.html" class="social-icon">
+                        <img src="~/img/Instagram.png" alt="Instagrams logo" />
+                    </a>
+                    <a href="index.html" class="social-icon">
+                        <img src="~/img/LinkedIn.png" alt="LinkedIns logo" />
+                    </a>
+                </div>
+            </div>
+            <div class="footer-logo">
+                <a asp-action="Index" asp-controller="Home">
+                    <img src="~/img/ppLogoMedNamn.png" alt="PetPawtners logo" />
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="~/js/Index.js"></script>
+</body>
+</html>

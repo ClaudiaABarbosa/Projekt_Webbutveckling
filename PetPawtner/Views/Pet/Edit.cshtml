@@ -1,0 +1,31 @@
+﻿@model Pet
+@{
+    Layout = "_LoggedInLayout";
+}
+<head>
+    <link href="~/css/LogIn.css" rel="stylesheet" />
+</head>
+<main>
+    <div class="container">
+        <h1 class="title">Ändra info om användaren</h1>
+
+        <form class="loginForm" asp-action="Edit">
+            <!--hidden innebär att den ligger i koden (i formuläret men syns inte för användaren). Detta gör vi för att id ska skickas med så att vi kan uppdatera innehållet-->
+            <input type="hidden" asp-for="Id" />
+            <label>Namn</label>
+            <input required asp-for="Name" />
+            <label>Ålder</label>
+            <input required asp-for="Age" />
+            <label>Beskrivning</label>
+            <input asp-for="Description" />
+            <div>
+                <label>Ras</label>
+                <select asp-for="BreedId" asp-items="ViewBag.BreedId"></select>
+            </div>
+            <div class=" loginBtn">
+                <i class="fa-solid fa-paw fa-lg" style="color: #e56700"><input type="submit" value="Uppdatera"></i>
+            </div>
+        </form>
+    </div>
+</main>
+<a asp-action="Index" asp-controller="Pet">Mina husdjur</a>

@@ -1,0 +1,40 @@
+﻿@model List<Pet>
+@{
+    Layout = "_LoggedInLayout";
+}
+<head>
+    <link href="~/css/MyPets.css" rel="stylesheet" />
+</head>
+<main>
+    <div class="card-container">
+    <h1>Mina husdjur</h1>
+
+            @foreach (var pet in Model) //@ är till för att berätta att man nu använder sig av c# kod i html
+            {
+                <div class="card">
+                  <div class="image">
+                    <img class="dog-image" alt="Random Dog Image will appear here" />
+                  </div>
+                    <h2 class="name">@Html.DisplayFor(modelItem => pet.Name)</h2>
+                    <div class="info">
+                    <p>Ras: @Html.DisplayFor(modelItem => pet.Breed.BreedName)</p>
+                    <p>Ålder: @Html.DisplayFor(modelItem => pet.Age) år</p>
+                    </div>
+                    <div class="btns">
+                    <button class="btn"><a  asp-action="Details" asp-route-id=@pet.Id>Visa mer</a></button>
+                    <button class="btn"><a asp-action="Edit" asp-route-id=@pet.Id>Uppdatera</a></button>
+                    <button class ="btn"><a asp-action="Delete" asp-route-id=@pet.Id>Radera</a></button>
+                </div>
+                </div>
+            }
+        <div class="card">
+            <div class="image">
+                <img src="~/img/plus.png" />
+            </div>
+            <div class="btns">
+            <button class="btn"><a asp-action="Create" asp-controller="Pet">Lägg till husdjur</a></button>
+        </div>
+        </div>
+    </div> 
+</main>
+<script src="~/js/FetchImage.js"></script>

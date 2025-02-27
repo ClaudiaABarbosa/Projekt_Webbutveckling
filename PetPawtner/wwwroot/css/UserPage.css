@@ -1,0 +1,301 @@
+﻿@import url(StylesLoggedIn.css);
+
+main{
+    min-height:100vh;
+}
+.hero {
+    background: url(/img/bakgrundKatt.png) no-repeat center/cover;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    margin-top: 1rem;
+    opacity: 0.8;
+    border-radius: 5px 5px 0 0;
+    padding-bottom: 2%;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+    font-size: 1.5em;
+    height: 70%;
+    width: 75%;
+    padding-left: 1em;
+    border-radius: 10px;
+    color: var(--secondaryColor);
+
+}
+.button a{
+    text-decoration:none;
+}
+    .button a:enabled, .button a:link {
+        text-decoration: none;
+    }
+.button i {
+   font-size:1.2em;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--highlightColor);
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    column-gap: 1em;
+    row-gap: 0.5em;
+    margin: 1em 0.5em;
+}
+
+.reminder-box h4,
+.calendar-box h4 {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+li,
+ul {
+    list-style: none;
+}
+
+.reminder-box {
+    color: var(--primaryColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50vh;
+    background: rgba(243, 239, 236, 0.5);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+}
+
+.reminders {
+    background: white;
+    height: 80%;
+    width: 90%;
+    border-radius: 0.5rem;
+}
+
+.btn {
+    color: var(--primaryColor);
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.3rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+.input {
+    position: relative;
+    display: flex;
+}
+
+.input-field {
+    width: 100%;
+    border: 0.06rem solid #d2d2d2bf;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+    color: var(--secondaryColor);
+}
+
+.scroll {
+    max-height: 50vh;
+    padding: 0;
+    overflow-y: scroll;
+}
+
+li {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.3rem;
+}
+
+.disabled {
+    display: flex;
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.7rem;
+    border: 0.06rem solid var(--highlightColor);
+    border-radius: 50%;
+}
+
+    input[type="checkbox"]:checked {
+        content: url(../img/CatFootprint.png);
+    }
+
+#clearBtn:hover,
+.btn:hover {
+    cursor: pointer;
+}
+
+.counter {
+    border: 0.06rem solid var(--grey-light);
+}
+
+.counter-container {
+    height: 2rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--secondaryColor);
+}
+
+/* Calendar styling */
+.calendar-box {
+    color: var(--primaryColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 50vh;
+    background: rgba(243, 239, 236, 0.5);
+    border-radius: 10px;
+    width: 100%;
+}
+
+.calendar {
+    width: 90%;
+    height: 85%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+    .calendar header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 25px 30px 10px;
+    }
+
+header .icons {
+    display: flex;
+}
+
+    header .icons span {
+        height: 38px;
+        width: 38px;
+        margin: 0 1px;
+        cursor: pointer;
+        color: #878787;
+        text-align: center;
+        line-height: 38px;
+        font-size: 1.9rem;
+        border-radius: 50%;
+    }
+
+header .current-date {
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+header .icons span:hover {
+    background: #f2f2f2;
+}
+
+.calendar-content {
+    padding: 20px;
+}
+
+    .calendar-content ul {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .calendar-content .days {
+        margin-bottom: 20px;
+    }
+
+    .calendar-content li {
+        color: #333;
+        width: calc(100% / 7);
+        font-size: 1.07rem;
+    }
+
+    .calendar-content .weekdays li {
+        font-weight: 600;
+        cursor: default;
+    }
+
+    .calendar-content .days li {
+        cursor: pointer;
+        margin-top: 30px;
+        position: relative;
+        z-index: 1;
+    }
+
+.days li.inactive {
+    color: #aaa;
+}
+
+.days li.active {
+    color: #fff;
+}
+
+.days li::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 40px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.days li.active::before {
+    background: var(--primaryColor);
+}
+
+.days li:not(.active):hover::before {
+    background: var(--highlightColor);
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 2em;
+    }
+    .button{
+        justify-self:center;
+        justify-content:center;
+    }
+    .container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .reminder-box,
+    .calendar-box {
+        width: 50%;
+    }
+}

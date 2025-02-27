@@ -1,0 +1,24 @@
+﻿@model Breed
+<head>
+    <link href="~/css/AdminDetails.css" rel="stylesheet" />
+</head>
+
+<main>
+    <h1>Radera ras</h1>
+    <div>
+        <strong>Id</strong>
+        @Html.DisplayFor(model => model.Id)
+    </div>
+    <div>
+        <strong>Rasnamn</strong>
+        @Html.DisplayFor(model => model.BreedName)
+    </div>
+
+    <form asp-action="DeleteBreed">
+        <input type="hidden" asp-for="Id" />
+        <div class=" loginBtn">
+            <input type="submit" value="Radera">
+        </div>
+    </form>
+    <a class="backbtn" asp-action="DetailsBreed">Tillbaka</a>
+</main>

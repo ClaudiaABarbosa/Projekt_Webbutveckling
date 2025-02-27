@@ -1,0 +1,26 @@
+﻿@model Pet
+@{
+    Layout = "_LoggedInLayout";
+}
+<head><link href="~/css/AdminDetails.css" rel="stylesheet" /></head>
+    <h1>Radera</h1>
+    <div>
+        <strong>Id</strong>
+        @Html.DisplayFor(model => model.Id)
+    </div>
+    <div>
+        <strong>Namn</strong>
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <div>
+        <strong>Ålder</strong>
+        @Html.DisplayFor(model => model.Age)
+    </div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <div class=" loginBtn">
+            <input type="submit" value="Radera">
+        </div>
+    </form>
+    <a asp-action="Index" asp-controller="Pet">Mina husdjur</a>
+

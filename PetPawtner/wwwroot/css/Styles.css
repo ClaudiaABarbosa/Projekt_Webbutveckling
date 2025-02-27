@@ -1,0 +1,172 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Playwrite+CU:wght@100..400&display=swap");
+:root {
+    --primaryColor: #e56700;
+    --secondaryColor: #00637c;
+    --highlightColor: #00bde5;
+    --offWhite: #f3efec;
+    --text: "Fredoka", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--text);
+}
+.topnav {
+    overflow: hidden;
+    background-color: var(--offWhite);
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0 0.3em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    max-height: 50px;
+}
+
+.logoImg {
+    max-height: 50px;
+    padding-top: 5px;
+}
+
+.logoName {
+    color: var(--primaryColor);
+}
+
+.logoNameBlue {
+    color: var(--highlightColor);
+}
+
+/* Mobile-first: Hide the desktop navbar */
+.navbarDesktop {
+    display: none;
+}
+
+/* Hide the links inside the mobile navigation menu by default */
+.topnav #myLinks {
+    display: none;
+    grid-column: 1/3;
+}
+
+/* Style the hamburger menu icon */
+.topnav a.icon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.topnav a {
+    color: var(--primaryColor);
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+    .topnav a:hover {
+        color: var(--highlightColor);
+    }
+
+/* Show the desktop navbar and hide the mobile menu on larger screens */
+@media (min-width: 760px) {
+    .topnav a.icon,
+    #myLinks {
+        display: none;
+    }
+
+    .topnav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbarDesktop {
+        display: flex;
+    }
+
+        .navbarDesktop a {
+            font-size: 17px;
+            color: var(--primaryColor);
+            text-decoration: none;
+            padding: 0.5em 1em;
+        }
+
+            .navbarDesktop a:hover {
+                background: var(--highlightColor);
+                color: #e56700;
+                border-radius: 5px;
+            }
+}
+
+/*FOOTER*/
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    background-color: var(--offWhite);
+    box-shadow: inset -1px 12px 16px -9px #ddd8d4;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    grid-column: 1/2;
+    gap: 1em;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+    .footer-links a {
+        text-decoration: none;
+        color: var(--primaryColor);
+    }
+
+        .footer-links a:hover {
+            color: var(--highlightColor);
+        }
+
+.social-mediaContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.follow-us {
+    font-size: 0.8em;
+    font-weight: 600;
+    color: var(--primaryColor);
+    margin-bottom: 1em;
+    padding-top: 0.4em;
+}
+
+.social-media {
+    grid-column: 2/3;
+    display: flex;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.social-icon:hover img {
+    background-color: var(--highlightColor);
+    transform: scale(1.1);
+}
+
+.footer-logo img {
+    grid-column: 3/4;
+    max-width: 5em;
+}

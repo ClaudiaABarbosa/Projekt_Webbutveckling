@@ -1,0 +1,32 @@
+﻿@model List<Breed>
+
+<head> <link href="~/css/Admin.css" rel="stylesheet" /></head>
+<main>
+    <h1>Raser</h1>
+    <table>
+        <!--Skapa en table-->
+        <thead>
+            <!--Table head, visar rubrikerna till de olika kolumner-->
+            <tr>
+                <!--tr= table row -->
+                <td><strong>Id</strong></td> <!--td table data, innehållet i varje cell i den raden man är i-->
+                <td><strong>Ras</strong></td>
+                <td><strong>Uppdatera</strong></td>
+                <td><strong>Radera</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var breed in Model) //@ är till för att berätta att man nu använder sig av c# kod i html
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => breed.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => breed.BreedName)</td>
+                    <td><a asp-action="EditBreed" asp-route-id=@breed.Id>Uppdatera</a></td>
+                    <td><a asp-action="DeleteBreed" asp-route-id=@breed.Id>Radera</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="backbtn" asp-action="CreateBreed">Lägg till raser</a>
+    <a class="backbtn" asp-action="Index">Tillbaka</a>
+</main>

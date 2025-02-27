@@ -1,0 +1,124 @@
+﻿@import url(../css/Styles.css);
+main {
+    display: flex;
+    flex-direction: column;
+    background: var(--primaryColor);
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.container {
+    background: var(--offWhite);
+    width: 100%;
+    max-width: 500px; /* Max bredd för att begränsa storlek på stora skärmar */
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.5rem;
+    color:var(--secondaryColor)
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1em;
+}
+
+    .loginForm label {
+        font-size: 1rem;
+        color: var(--secondaryColor);
+    }
+
+    .loginForm input {
+        padding: 0.5rem;
+        font-size: 1rem;
+        border: 1px solid var(--offWhite);
+        border-radius: 5px;
+    }
+
+    .loginBtn {
+        all: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--secondaryColor);
+        height: 2.5rem;
+        width: 100%;
+        color: var(--primaryColor);
+        border-radius: 5px;
+        font-size: 1.2rem;
+        margin-top: 1em;
+     
+    }
+
+    .loginBtn:hover {
+            background: var(--highlightColor);
+    }
+
+    .loginBtn input[type="submit"]{
+        all:none;
+        background: transparent;
+        border:none;
+        color: var(--primaryColor);
+        cursor: pointer;
+    }
+.backbtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    text-decoration:none;
+}
+    .error{
+        display:flex;
+        justify-content:center;
+        text-align:center;
+        color:var(--secondaryColor)
+    }
+
+
+/* Media queries för mindre skärmar */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .loginForm button {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .loginForm label,
+    .loginForm input {
+        font-size: 0.9rem;
+    }
+
+    .loginForm button {
+        font-size: 1rem;
+        height: 2.3rem;
+    }
+}
+

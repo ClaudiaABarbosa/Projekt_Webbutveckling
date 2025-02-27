@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "_LoggedInLayout";
+}
+<head>
+    <link href="~/css/UserPage.css" rel="stylesheet" />
+</head>
+<main>
+    <section class="hero">
+        <button class="button">
+            <a asp-action="Index" asp-controller="Pet">Gå till husdjursprofil</a>
+             <i class="fa-solid fa-dog" style="color: #00637c;"></i>
+        </button>
+        <button type="button" class="button">
+            Hitta passning <i class="fa-regular fa-calendar-plus" style="color: #00637c;"></i>
+        </button>
+        <button type="button" class="button">
+            Lägg upp bilder <i class="fa-solid fa-camera" style="color: #00637c;"></i>
+        </button>
+        <button type="button" class="button">
+            Visa/Redigera viktig information <i class="fa-solid fa-pen-to-square" style="color: #00637c;"></i>
+        </button>
+        <button type="button" class="button">
+            Skriv anteckning om husdjur <i class="fa-solid fa-book" style="color: #00637c;"></i>
+        </button>
+    </section>
+    <section class="container">
+        <div class="reminder-box">
+            <h4>Påminnelser</h4>
+            <!-- Tutorial Youtube -->
+            <div class="reminders">
+                <div class="input">
+                    <input type="text"
+                           class="input-field"
+                           id="reminderInput"
+                           placeholder="Lägg till påminnelse" />
+                    <button class="btn">Lägg till</button>
+                </div>
+                <ul class="scroll">
+                    <li id="reminderList"></li>
+                </ul>
+                <div>
+                    <hr class="counter" />
+                    <div class="counter-container">
+                        <p><span id="reminderCounter">0</span> påminnelser</p>
+                        <button id="clearBtn">Radera alla</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="calendar-box">
+            <h4>Kalender</h4>
+            <!-- Code from YouTube Tutorial -->
+            <div class="calendar">
+                <header>
+                    <p class="current-date"></p>
+                    <div class="icons">
+                        <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                        <span id="next" class="material-symbols-rounded">chevron_right</span>
+                    </div>
+                </header>
+                <div class="calendar-content">
+                    <ul class="weekdays">
+                        <li>Mån</li>
+                        <li>Tis</li>
+                        <li>Ons</li>
+                        <li>Tor</li>
+                        <li>Fre</li>
+                        <li>Lör</li>
+                        <li>Sön</li>
+                    </ul>
+                    <ul class="days"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="~/js/Calendar.js"></script>
+<script src="~/js/Reminders.js"></script>

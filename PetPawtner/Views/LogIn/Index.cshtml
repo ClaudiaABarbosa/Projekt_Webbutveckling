@@ -1,0 +1,23 @@
+﻿@model User
+<head>
+    <link href="~/css/LogIn.css" rel="stylesheet" />
+</head>
+<main>
+    <div class="container">
+        <h1 class="title">Logga in </h1>
+        <form class="loginForm" asp-action="Index" asp-route-returnurl="@ViewData["ReturnUrl"]">
+            <label>Användarnamn</label>
+            <input required asp-for="Username" />
+            <label>Lösenord</label>
+            <input type="password" required asp-for="Password" />
+            <div class=" loginBtn">
+                <i class="fa-solid fa-paw fa-lg" style="color: #e56700"><input type="submit" value="Logga in"></i>
+            </div>
+            <div class="error">
+                <p>
+                    @ViewBag.ErroMessage
+                </p>
+            </div>
+        </form>
+    </div>
+</main>

@@ -1,0 +1,122 @@
+﻿@model Pet
+@{
+    Layout = "_LoggedInLayout";
+}
+<head>
+    <link href="~/css/PetPage.css" rel="stylesheet" />
+</head>
+
+<main class="main-container">
+    <div class="card-profile">
+        <div class="profile-image">
+            <img class="dog-image" alt="Random Dog Image will appear here" />
+        </div>
+        <div class="profile-info">
+            <h4 class="profile-info name">@Html.DisplayFor(model => model.Name)</h4>
+            <ul>
+                <li>Ålder: @Html.DisplayFor(model => model.Age)</li>
+                <li>Ras: @Html.DisplayFor(model => model.Breed.BreedName)</li>
+                <li>Beskrivning: @Html.DisplayFor(model => model.Description)</li>
+                <li>Kön: Tik/hane </li>
+                <li>Kastrerad: Ja/nej</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card-important">
+        <header>Viktigt Information!</header>
+        <ul class="information">
+            <li id="infoList"></li>
+        </ul>
+        <div class="input">
+            <input id="informationInput" class="input-field" type="text" />
+            <button class="btn">Lägg till</button>
+            <button id="clearBtn" class="btn">Radera alla</button>
+        </div>
+        
+    </div>
+    <div class="card-overview">
+        <h4 class="overview-title">Översikt om @Html.DisplayFor(model => model.Name)</h4>
+        <div class="overview-habits">
+            <h6 class="blue"><img src="~/img/DogBowl.png" alt="" /> Matvanor</h6>
+            <ul>
+                <li>Äter 2ggr om dagen</li>
+                <li>1dl per portion</li>
+                <li>kl 7 och kl 19</li>
+            </ul>
+        </div>
+        <div class="overview-habits">
+            <h6 class="orange">
+                <img src="~/img/DogPooping.png" alt="" /> Toalettvanor
+            </h6>
+            <ul>
+                <li>Går ut 3ggr om dagen; morgon, lunch och kväll.</li>
+                <li>bajsar iaf 2 gånger om dagen.</li>
+                <li>kissar varje gång</li>
+            </ul>
+        </div>
+        <div class="overview-habits">
+            <h6 class="blue">
+                <img src="~/img/AngryDog.png" alt="" /> Gillar inte
+            </h6>
+            <ul>
+                <li>Klippa klor</li>
+                <li>Borsta tänderna</li>
+                <li>Andra djur</li>
+            </ul>
+        </div>
+        <div class="overview-habits">
+            <h6 class="orange"><img src="~/img/DogPark.png"alt="" /> Gillar</h6>
+            <ul>
+                <li>Leka med bollen</li>
+                <li>Allt som är mat! Men speciellt tuggben</li>
+                <li>Sova i sängen.</li>
+            </ul>
+        </div>
+    
+    </div>
+    <div class="card-images-container">
+        <div class="card-images">
+            <div class="images">
+                <div class="image">
+                    <img class="dog-image" alt="Random Dog Image will appear here" />
+                </div>
+                <div class="image">
+                    <img class="dog-image" alt="Random Dog Image will appear here" />
+                </div>
+                <div class="image">
+                    <img class="dog-image" alt="Random Dog Image will appear here" />
+                </div>
+            </div>
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+    </div>
+    <div class="card-notes">
+        <h4 class="notes-title">Anteckningar</h4>
+        <div class="notes">
+            <ul>
+                <li>24-09-18: exemple på hur det kan se ut &#128512;</li>
+                <li>24-09-20: &#128062; &#128054;</li>
+                <li>24-09-25: &#128062; &#128049;</li>
+            </ul>
+        </div>
+        <div class="overview-more">
+            <a>Redigera</a>
+        </div>
+    </div>
+</main>
+<script src="~/js/FetchImage.js"></script>
+<script src="~/js/AddImportantInfo.js"></script>
+<script src="~/js/SlideShow.js"></script>
+
+
+
+
+
+
+
+
+
+
+

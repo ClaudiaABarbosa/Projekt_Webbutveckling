@@ -1,0 +1,34 @@
+﻿@model List<User>
+
+    <head><link href="~/css/Admin.css" rel="stylesheet" /> </head>
+<main>
+    <h1>Users</h1>
+    <table>
+        <!--Skapa en table-->
+        <thead>
+            <!--Table head, visar rubrikerna till de olika kolumner-->
+            <tr>
+                <!--tr= table row -->
+                <td><strong>Id</strong></td> <!--td table data, innehållet i varje cell i den raden man är i-->
+                <td><strong>User</strong></td>
+                <td><strong>Visa mer</strong></td>
+                <td><strong>Uppdatera användare</strong></td>
+                <td><strong>Radera användare</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model) //@ är till för att berätta att man nu använder sig av c# kod i html
+            {
+               
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => user.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => user.Username)</td>
+                    <td><a asp-action="DetailsUser" asp-route-id=@user.Id>Visa info</a></td> 
+                    <td><a asp-action="EditUser" asp-route-id=@user.Id>Uppdatera</a></td>
+                    <td><a asp-action="DeleteUser" asp-route-id=@user.Id>Radera</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a class="backbtn" asp-action="DetailsBreed">Hantera raser</a>
+</main>

@@ -1,0 +1,275 @@
+﻿/* Mobile-first CSS (för små skärmar) */
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-top: 1rem;
+    row-gap: 1.5em;
+    min-height:100vh;
+}
+
+.card-profile,
+.card-important,
+.card-overview,
+.card-notes,
+.card-images-container {
+    width: 100%;
+    max-height: 90vh;
+    margin: 0 auto;
+}
+
+.card-profile {
+    display: grid;
+    grid-template-columns: 1fr;
+    background: rgba(0, 189, 229, 0.1);
+    border-radius: 2rem;
+    padding: 1rem;
+    border: var(--secondaryColor) 1px solid;
+    box-shadow: 15px 25px 16px -9px rgba(19, 149, 175, 0.4);
+}
+
+.profile-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+    .profile-image .dog-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+.profile-info {
+    color: var(--secondaryColor);
+    font-weight:600;
+}
+
+    .profile-info .name {
+        font-size: 1.5em;
+        color: var(--secondaryColor); 
+        text-align: center;
+    }
+
+    .profile-info ul {
+        list-style: none;
+        padding: 0;
+    }
+
+.card-overview {
+    background: rgba(229, 103, 0, 0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.overview-title {
+    color: var(--secondaryColor);
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.overview-habits h6 {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.overview-habits img {
+    height: 1.2rem;
+}
+
+.overview-habits ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    color: var(--secondaryColor);
+}
+
+.overview-more {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+    .overview-more a {
+        background-color: var(--highlightColor);
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        color: var(--secondaryColor);
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+
+.card-important {
+    border: 1px solid var(--secondaryColor);
+    border-radius: 5px;
+    padding: 1rem; 
+}
+
+    .card-important header {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--highlightColor);
+        background-color: var(--primaryColor);
+        padding: 0.5rem;
+    }
+    #infoList{
+        padding:1em;
+     color: var(--secondaryColor);
+    }
+
+.input {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    margin-left: 3em;
+}
+
+.input-field {
+    width: 70%;
+    padding: 0.75rem;
+    border: 1px solid #d2d2d2bf;
+    border-radius: 0.5rem;
+}
+
+.btn, #clearBtn{
+    color: var(--primaryColor);
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.3rem;
+    background-color: var(--secondaryColor);
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.information li {
+    list-style: none;
+    margin: 0.5rem 0;
+}
+
+.card-notes {
+    background: rgba(229, 103, 0, 0.1);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom:.5em;
+}
+
+    .card-notes h4 {
+        font-size: 1.5rem;
+        color: var(--primaryColor);
+        text-align: center;
+    }
+
+    .card-notes ul {
+        list-style: none;
+        padding: 0;
+    }
+
+.card-images-container {
+    background-color: rgba(211, 211, 211, 0.2);
+    border-radius: 20px 20px 0 0;
+    padding: 1rem;
+}
+
+.card-images {
+    position: relative;
+    width: 100%;
+    height: 95%;
+    overflow: hidden;
+}
+
+.images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.image {
+    min-width: 100%;
+}
+
+    .image img {
+        width: 100%;
+        height: auto;
+    }
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 18px;
+    border: none;
+    z-index: 1;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Större skärmar (tablets och desktop) */
+@media (min-width: 768px) {
+    .main-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2em;
+    }
+
+    .card-profile {
+        grid-template-columns: repeat(2, 1fr);
+        width: 80%;
+    }
+
+    .profile-image .dog-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-info .name {
+        font-size: 2em;
+    }
+
+    .overview-title {
+        font-size: 1.5rem;
+    }
+    .overview-habits img {
+        height: 1.7em;
+        
+    }
+    .overview-habits h6 {
+        font-size: 1.7em;
+        gap:.5em;
+    }
+    .overview-habits ul {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 0.5rem;
+        color: var(--secondaryColor);
+        font-size: 1.7em;
+    }
+    .card-overview,
+    .card-notes {
+        width: 90%;
+    }
+
+        .card-notes h4 {
+            font-size: 2rem;
+        }
+}
+
+@media (min-width: 1024px) {
+    .main-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

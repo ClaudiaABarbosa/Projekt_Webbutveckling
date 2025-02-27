@@ -1,0 +1,26 @@
+﻿
+@model Pet
+
+<head>
+    <link href="~/css/LogIn.css" rel="stylesheet" />
+</head>
+<main>
+    <div class="container">
+        <h1 class="title">Skapa konto</h1>
+        <form id="profileForm" class="loginForm" asp-action="Create">
+            <label>Namn</label>
+            <input required asp-for="Name" />
+            <label>Ålder</label>
+            <input required asp-for="Age" />
+            <label>Berskriv ditt husdjur med tre ord</label>
+            <input required asp-for="Description" />
+            <div>
+                <label>Ras</label>
+                <select id="breedSelect" asp-for="BreedId" asp-items="ViewBag.BreedId"></select>
+            </div>
+            <div class=" loginBtn">
+                <i class="fa-solid fa-paw fa-lg" style="color: #e56700"><input type="submit" value="Lägg till"></i>
+            </div>
+        </form>
+    </div>
+</main>

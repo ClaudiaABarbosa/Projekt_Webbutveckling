@@ -1,0 +1,30 @@
+﻿@model User
+
+<head> <link href="~/css/AdminDetails.css" rel="stylesheet" /> </head>
+<main>
+    <h1>Användardetaljer</h1>
+    <div>
+        <strong>Id</strong>
+        @Html.DisplayFor(model => model.Id)
+    </div>
+    <div>
+        <strong>FirstName</strong>
+        @Html.DisplayFor(model => model.FirstName)
+    </div> <div>
+        <strong>LastName</strong>
+        @Html.DisplayFor(model => model.LastName)
+    </div>
+    <div>
+       <strong>Username</strong>
+       @Html.DisplayFor(model => model.Username)
+    </div>
+    <div>
+        <strong>E-mail</strong>
+        @Html.DisplayFor(model => model.Email)
+     </div>
+    <div>
+        <strong>Password</strong>
+        @Html.DisplayFor(model => model.Password)
+    </div>
+    <a class="backbtn" asp-action="Index">Tillbaka</a>
+</main>

@@ -1,0 +1,28 @@
+﻿@model User
+<head> <link href="~/css/AdminDetails.css" rel="stylesheet" /></head>
+<main>
+    <h1>Radera användare</h1>
+    <div>
+        <strong>Id</strong>
+        @Html.DisplayFor(model => model.Id)
+    </div>
+    <div>
+        <strong>Username</strong>
+        @Html.DisplayFor(model => model.Username)
+    </div>
+    <div>
+        <strong>E-mail</strong>
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    <div>
+        <strong>Password</strong>
+        @Html.DisplayFor(model => model.Password)
+    </div>
+    <form asp-action="DeleteUser">
+        <input type="hidden" asp-for="Id" />
+        <div class=" loginBtn">
+            <input type="submit" value="Radera">
+        </div>
+    </form>
+    <a class="backbtn" asp-action="Index">Tillbaka</a>
+</main>
